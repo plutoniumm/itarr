@@ -1,13 +1,13 @@
 {
   "name": "itarr",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.1.0",
+  "description": "light-weight iterator array",
   "main": "index.js",
   "scripts": {
     "test": "bun test.ts",
-    "build": "tsc index.ts --strict --lib es2020 --target es6"
+    "build": "tsc index.ts --strict --lib es2020 --target es6 && esbuild index.js --minify --outfile=index.min.js --target=es6 && rm index.js && mv index.min.js index.js",
+    "size": "npm run build &> /dev/null && wc -c index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "plutoniumm",
+  "license": "MIT"
 }
