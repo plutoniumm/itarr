@@ -1,0 +1,13 @@
+{
+  "name": "itarr",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "bun test.ts",
+    "build": "tsc index.ts --strict --lib es2020 --target es6"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
