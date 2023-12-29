@@ -107,6 +107,25 @@ class List {
     return accumulator;
   }
 
+  flat (depth: number = 1): List {
+    if (typeof depth !== 'number') {
+      throw new TypeError('flat expects a number');
+    }
+
+    const data = this.data;
+    return new List(function* () {
+      let index = 0;
+
+      for (let x of data as any[]) {
+        if (Array.isArray(x) && depth > 0) {
+          yield* new List(x).flat(depth - 1).data;
+        } else {
+          yield x;
+        }
+      }
+    });
+  }
+
   collect (): any[] {
     return this.reduce((acc: any[], item: any) => {
       acc.push(item);
