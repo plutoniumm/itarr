@@ -1,6 +1,6 @@
 {
   "name": "itarr",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "type": "module",
   "description": "light-weight iterator array",
   "main": "index.js",

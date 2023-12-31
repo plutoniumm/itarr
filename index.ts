@@ -88,7 +88,11 @@ class List {
 
 
     if (generated.done) {
-      throw new TypeError('Idk what happened here');
+      if (initialValue === undefined) {
+        throw new TypeError('reduce of empty list with no initial value');
+      } else {
+        return initialValue;
+      }
     }
 
     if (initialValue)
